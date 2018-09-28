@@ -19,7 +19,7 @@ int comment_ctr;
 <COMMENT>"*/"       { --comment_ctr; if (comment_ctr < 1) BEGIN INITIAL; }
 <COMMENT>(.|\n)     { /* ignore comment content */ }
 
-"begin"	            { return TOKBEGIN; }
+"begin"             { return TOKBEGIN; }
 {digit}+            { yylval.number = atoi(yytext); return TOKNUMBER; }
 ({upper}|{low})+    { yylval.string = strdup(yytext); return TOKWORD; }
 ,                   return TOKCOMMA;
