@@ -8,7 +8,9 @@ extern int yylex();
 char const *yyerror(const char *str);
 %}
 
-%expect 0  // For expected amount of conflicts
+// For expected number of conflicts
+%expect    0  // shift/reduce
+%expect-rr 0  // reduce/reduce
 
 %start unit
 
